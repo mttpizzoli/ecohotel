@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+<h2>Data Last 24h</h2>
+<hr>
+
+  {% if is_authenticated %}
+    <table class="table table-striped">
+      <tr>
+        <th>Produced Energy (Last 24h)</th>
+        <th>Consumed Energy (Last 24h)</th>
+        <th>Transaction ID</th>
+      </tr>
+      <tr>
+        <td>{{produced_energy}}</td>
+        <td>{{consumed_energy}}</td>
+        <td>{{transaction_id}}</td>
+      </tr>
+    </table>
+  {% else %}
+    Sorry, you must be logged to view the content of this page.
+  {% endif %}
+
+  <hr>
+  <button onclick="location.href='/home/'" type="button" class="btn btn-primary">Home</button>
+
+</div>
+
+{% endblock %}

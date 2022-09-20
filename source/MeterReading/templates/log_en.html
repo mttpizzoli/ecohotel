@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+
+  <h1>Energy log</h1>
+  <hr>
+
+  {% if is_an_operator %}
+  <p>Last log was done on: {{timestamp_last_log}}</p>
+  <p>Log energy here.</p>
+  <form action="/log/" method="post">
+    {% csrf_token %}
+    <label for="">Produced Energy (Wh)</label>
+    <input class="input-group" type="number" id="produced-energy" name="produced-energy" placeholder="Produced Energy" required>
+    <br>
+    <label for="">Consumed Energy (Wh)</label>
+    <input class="input-group" type="number" id="consumed-energy" name="consumed-energy" placeholder="Consumed Energy" required>
+    <br><hr>
+    <button class="btn btn-primary" type="Submit">Submit</button>
+    <button onclick="location.href='/home/'" type="button" class="btn btn-primary">Home</button>
+  </form>
+  {% else %}
+  <p>Sorry! you must be logged as an operator to use this page</p>
+  <hr>
+  <button onclick="location.href='/home/'" type="button" class="btn btn-primary">Home</button>
+  {% endif %}
+
+  </div>
+
+{% endblock %}

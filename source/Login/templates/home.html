@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+
+  <h1>This is the home page</h1>
+
+  <h3>{{ message }}</h3>
+
+  <button onclick="location.href='/login/'" type="button" class="btn btn-success">Login</button>
+  <button onclick="location.href='/logout/'" type="button" class="btn btn-danger">Logout</button>
+  <br><br>
+  <button onclick="location.href='/log/'" type="button" class="btn btn-warning">Log Data</button>
+  <button onclick="location.href='/data-last-24h/'" type="button" class="btn btn-primary">Data Last 24h</button>
+  <button onclick="location.href='/data-all-time/'" type="button" class="btn btn-primary">Data All Time</button>
+
+
+
+  </div>
+{% endblock %}

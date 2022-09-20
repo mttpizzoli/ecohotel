@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+
+  <h1>LOGIN PAGE</h1>
+
+  <form action="/login-success/" method="post">
+    {% csrf_token %}
+    <label for="">Username</label>
+    <input class="input-group" type="text" id="username" name="username" placeholder="Insert your Username" required>
+    <br>
+    <label for="">Password</label>
+    <input class="input-group" type="password" id="password" name="password" placeholder="Insert your Password" required>
+    <br>
+    <button class="btn btn-primary" type="Submit">Sign In</button>
+    <button onclick="location.href='/home/'" type="button" class="btn btn-primary">Home</button>
+  </form>
+
+
+  </div>
+
+{% endblock %}

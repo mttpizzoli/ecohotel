@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+<h2>Data all time</h2>
+<hr>
+
+  {% if is_admin %}
+    <table class="table table-striped">
+      <tr>
+        <th>Total Produced Energy</th>
+        <th>Total Consumed Energy</th>
+      </tr>
+      <tr>
+        <td>{{total_produced_energy}}</td>
+        <td>{{total_consumed_energy}}</td>
+      </tr>
+    </table>
+  {% else %}
+    <p>Sorry, you must be logged as an admin to view this page!</p>
+  {% endif %}
+
+  <hr>
+  <button onclick="location.href='/home/'" type="button" class="btn btn-primary">Home</button>
+
+</div>
+
+{% endblock %}
